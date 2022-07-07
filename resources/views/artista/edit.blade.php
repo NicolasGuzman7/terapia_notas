@@ -1,0 +1,49 @@
+@extends('layouts.app8')
+
+@section('title', 'Editar Artista')
+
+@section('content')
+
+<div class="container" style="margin-top: 100px;border-style: outset; border-color: #8869DB; border-width: 7px;">
+
+	<form class="form-group" method="POST" action="/artista/{{$artista->slug}}/edit" enctype="multipart/form-data">
+		@method("PUT")
+		@csrf
+		<div class="form-group">
+			<label for="">Nombre</label>
+			<input type="text" name="name" value="{{$artista->name}}" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="">Detalles</label>
+			<input type="text" name="detail" value="{{$artista->detail}}" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="">Numero de Contacto</label>
+			<input type="text" name="telefono" value="{{$artista->telefono}}" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="">Mail de Contacto</label>
+			<input type="text" name="mail" value="{{$artista->mail}}" class="form-control">
+		</div>
+
+		<div class="form-group">
+			<label for="">Instagram</label>
+			<input type="text" name="instagram" value="{{$artista->instagram}}" class="form-control">
+		</div>
+
+		<div class="form-group">
+			<label for="">Facebook</label>
+			<input type="text" name="facebook" value="{{$artista->facebook}}" class="form-control">
+		</div>
+
+		<div class="form-group">
+			<label for="">Avatar</label>
+			<input type="file" name="avatar">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Actualizar</button>
+		
+		</form>
+	
+
+@endsection
